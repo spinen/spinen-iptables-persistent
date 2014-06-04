@@ -70,13 +70,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.berkshelf.except = []
 
   config.vm.provision :chef_solo do |chef|
-    chef.json = {
-      mysql: {
-        server_root_password: 'rootpass',
-        server_debian_password: 'debpass',
-        server_repl_password: 'replpass'
-      }
-    }
+    chef.data_bags_path = "data_bags"
 
     chef.run_list = [
         "recipe[spinen-iptables::default]"

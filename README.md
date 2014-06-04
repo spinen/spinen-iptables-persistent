@@ -4,12 +4,18 @@ Spinen iptables Cookbook
 This cookbook installs iptables-persistent, and configures the server to open the specified ports via iptables.
 
 
+## Setup
+---
+
+For the spinen-iptables cookbook to function correctly, you need to create a data_bags network configuration. A sample networks.json is provided, but is not functional. Use it as a sample template to work with. Replace the "sample-network" groups with networks that you plan on using. Replace all "33.33.33.changethis" with the corresponding network ip addresses, and replace all domain names with the desired domain.
+
 ## Attributes
 ---
 
+#### Loads data_bag configurations
 `networks = Chef::DataBagItem.load("configs", "networks")`
 
-####Allow SPINEN VPN for ssh
+#### Allow SPINEN VPN for ssh
 
 `networks["development"]["management"].each do |net|`
 

@@ -1,0 +1,14 @@
+{
+	"id": "queues",
+	"queuelist": {
+		"myqueue": {
+			"autorestart": "true",
+			"autostart": "true",
+			"command": "php artisan queue:listen --tries=1",
+			"directory": "/var/www",
+			"redirect_stderr": "true",
+			"stout_logfile": "/var/www/app/storage/logs/myqueue_supervisord.log",
+			"stopsignal": "KILL"
+			}
+		}
+}
