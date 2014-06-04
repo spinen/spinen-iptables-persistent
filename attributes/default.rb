@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# If you want to add any partial templates, change "no-partial" to the partial you want to include.
+# If you want to add any partial templates, change "no-partial" to the partial you plan to include.
 node.default['iptables']['partial'] = "no-partial"
 
 #Point the default vpc to development. Change "development" to whatever vpc you plan on managing.

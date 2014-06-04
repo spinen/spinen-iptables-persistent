@@ -16,14 +16,15 @@
 			"cidr": "24",
 			"network": "0",
 			"publicip": "0"
-		},
+		}
 	},
+
 	"_default": {
 		"cidr": "16",
 		"domain": "insert.domain.here",
 		"management": [
 			"sample-network1",
-			"sample-network2",
+			"sample-network2"
 		],
 		"network": "33.33.33.changethis",
 		"publicip": "33.33.33.changethis"
@@ -33,7 +34,7 @@
 		"domain": "insert.domain.here",
 		"management": [
 			"sample-network1",
-			"sample-network2",
+			"sample-network2"
 		],
 		"network": "33.33.33.changethis",
 		"publicip": "33.33.33.changethis"
@@ -43,7 +44,7 @@
 		"domain": "insert.domain.here",
 		"management": [
 			"sample-network1",
-			"sample-network2",
+			"sample-network2"
 		],
 		"network": "0",
 		"publicip": "0"
@@ -53,7 +54,7 @@
 		"domain": "insert.domain.here",
 		"management": [
 			"sample-network1",
-			"sample-network2",
+			"sample-network2"
 		],
 		"network": "33.33.33.changethis",
 		"publicip": "33.33.33.changethis"
@@ -63,7 +64,7 @@
 		"domain": "insert.domain.here",
 		"management": [
 			"sample-network1",
-			"sample-network2",
+			"sample-network2"
 		],
 		"network": "33.33.33.changethis",
 		"publicip": "33.33.33.changethis"
@@ -73,7 +74,7 @@
 		"domain": "insert.domain.here",
 		"management": [
 			"sample-network1",
-			"sample-network2",
+			"sample-network2"
 		],
 		"network": "33.33.33.changethis",
 		"publicip": "33.33.33.changethis"
@@ -83,7 +84,7 @@
 		"domain": "insert.domain.here",
 		"management": [
 			"sample-network1",
-			"sample-network2",
+			"sample-network2"
 		],
 		"network": "33.33.33.changethis",
 		"publicip": "33.33.33.changethis"
