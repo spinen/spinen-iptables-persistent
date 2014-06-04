@@ -1,7 +1,0 @@
-{
-    "groups":["sysadmin", "vpn"],
-    "comment":"Jane Doe",
-    "username":"jane",
-    "id":"jane",
-    "vpn_password":"someverysecurepassword"
-}
