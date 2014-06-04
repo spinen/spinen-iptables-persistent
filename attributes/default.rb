@@ -8,7 +8,7 @@
 #
 
 # If you want to add any partial templates, change "no-partial" to the partial you want to include.
-node['iptables']['partial'] = "no-partial"
+node.default['iptables']['partial'] = "no-partial"
 
 #Point the default vpc to development. Change "development" to whatever vpc you plan on managing.
-node['dns']['vpc'] = "development"
+node.default['dns']['vpc'] = "development"
