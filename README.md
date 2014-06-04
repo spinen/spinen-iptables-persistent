@@ -7,7 +7,7 @@ This cookbook installs iptables-persistent, and configures the server to open th
 ## Setup
 ---
 
-For the spinen-iptables cookbook to function correctly, you need to create a data_bags network configuration. A sample networks.json is provided, but is not functional. Use it as a sample template to work with. Replace the "sample-network" groups with networks that you plan on using. Replace all "33.33.33.changethis" with the corresponding network ip addresses, and replace all domain names with the desired domain.
+For the spinen-iptables cookbook to function correctly, you need to create a data_bags network configuration. A sample networks.json is provided, but is not functional. Use it as a sample framework to work with. Replace the "sample-network" groups with networks that you plan on using. Replace all "33.33.33.changethis" with the corresponding network ip addresses, and replace all domain names with the desired domain.
 
 ## Attributes
 ---
@@ -15,7 +15,7 @@ For the spinen-iptables cookbook to function correctly, you need to create a dat
 # If you want to add any partial templates, change "no-partial" to the partial you intend to include.
 node.default['iptables']['partial'] = "no-partial"
 
-#Point the default vpc to development. Change "development" to whatever vpc you plan on managing.
+# Change "development" to whatever vpc you plan on managing.
 node.default['dns']['vpc'] = "development"
 
 ## Usage

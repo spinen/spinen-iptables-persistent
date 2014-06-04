@@ -9,13 +9,13 @@
 		},
 		"sample-network1": {
 			"cidr": "24",
-			"network": "0",
-			"publicip": "0"
+			"network": "33.33.33.changethis",
+			"publicip": "33.33.33.changethis"
 		},
 		"sample-network2": {
 			"cidr": "24",
-			"network": "0",
-			"publicip": "0"
+			"network": "33.33.33.changethis",
+			"publicip": "33.33.33.changethis"
 		}
 	},
 
@@ -46,8 +46,8 @@
 			"sample-network1",
 			"sample-network2"
 		],
-		"network": "0",
-		"publicip": "0"
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
 	},
 	"qanda": {
 		"cidr": "16",
