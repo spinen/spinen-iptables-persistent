@@ -1,0 +1,92 @@
+{
+	"id": "networks",
+	"domain": "insert.domain.here",
+	
+	"management": {
+		"anywhere": {
+			"cidr": "0",
+			"network": "0"
+		},
+		"sample-network1": {
+			"cidr": "24",
+			"network": "33.33.33.changethis",
+			"publicip": "33.33.33.changethis"
+		},
+		"sample-network2": {
+			"cidr": "24",
+			"network": "33.33.33.changethis",
+			"publicip": "33.33.33.changethis"
+		}
+	},
+
+	"_default": {
+		"cidr": "16",
+		"domain": "insert.domain.here",
+		"management": [
+			"sample-network1",
+			"sample-network2"
+		],
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
+	},
+	"devops": {
+		"cidr": "16",
+		"domain": "insert.domain.here",
+		"management": [
+			"sample-network1",
+			"sample-network2"
+		],
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
+	},
+	"development": {
+		"cidr": "16",
+		"domain": "insert.domain.here",
+		"management": [
+			"sample-network1",
+			"sample-network2"
+		],
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
+	},
+	"qanda": {
+		"cidr": "16",
+		"domain": "insert.domain.here",
+		"management": [
+			"sample-network1",
+			"sample-network2"
+		],
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
+	},
+	"utility": {
+		"cidr": "16",
+		"domain": "insert.domain.here",
+		"management": [
+			"sample-network1",
+			"sample-network2"
+		],
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
+	},
+	"sandbox": {
+		"cidr": "16",
+		"domain": "insert.domain.here",
+		"management": [
+			"sample-network1",
+			"sample-network2"
+		],
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
+	},
+	"production": {
+		"cidr": "16",
+		"domain": "insert.domain.here",
+		"management": [
+			"sample-network1",
+			"sample-network2"
+		],
+		"network": "33.33.33.changethis",
+		"publicip": "33.33.33.changethis"
+	}
+}
