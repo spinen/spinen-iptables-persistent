@@ -12,11 +12,13 @@ For the spinen-iptables cookbook to function correctly, you need to create a dat
 ## Attributes
 ---
 
-# If you want to add any partial templates, change "no-partial" to the partial you intend to include.
-node.default['iptables']['partial'] = "no-partial"
+### If you want to add any partial templates, change "no-partial" to the partial you intend to include.
 
-# Change "development" to whatever vpc you plan on managing.
-node.default['dns']['vpc'] = "development"
+`node.default['iptables']['partial'] = "no-partial"`
+
+### Change "development" to whatever vpc you plan on managing.
+
+`node.default['dns']['vpc'] = "development"`
 
 ## Usage
 ---
