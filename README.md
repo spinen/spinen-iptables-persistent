@@ -3,7 +3,6 @@ Spinen iptables Cookbook
 
 This cookbook installs iptables-persistent, and configures the server to open the specified ports via iptables.
 
-
 ## Setup
 ---
 
