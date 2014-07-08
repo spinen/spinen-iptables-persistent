@@ -28,8 +28,8 @@ networks["#{node['dns']['vpc']}"]["management"].each do |net|
 end
 
 # create a hash of "network" => "network/cidr" for each allowed icmp network based on the vpc of the build
-icmp_list["sample-network1"] = networks["management"]["sample-network1"]["network"] + "/" + networks["management"]["sample-network1"]["cidr"]
-icmp_list["sample-network2"] = networks["management"]["sample-network2"]["network"] + "/" + networks["management"]["sample-network2"]["cidr"]
+icmp_list[node['iptables']['network1']] = networks["management"][node['iptables']['network1']]["network"] + "/" + networks["management"][node['iptables']['network1']]["cidr"]
+icmp_list[node['iptables']['network2']] = networks["management"][node['iptables']['network2']]["network"] + "/" + networks["management"][node['iptables']['network2']]["cidr"]
 icmp_list["anywhere"] = networks["management"]["anywhere"]["network"] + "/" + networks["management"]["anywhere"]["cidr"]
 
 

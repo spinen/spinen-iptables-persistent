@@ -1,9 +1,20 @@
 require 'spec_helper'
 
 describe 'spinen-iptables::default' do
-	let(:chef_run) { ChefSpec::Runner.new.converge('spinen-iptables::default') }
+	let(:chef_run) do
+    ChefSpec::Runner.new do |node|
+      node.set['dns']['vpc'] = "development"
+    end.converge('spinen-iptables::default')
+  end
 
-   #add data bag support to this test so that the test will function.
+ 
+
+  before do
+      stub_data_bag_item('configs', 'networks').and_return({
+      'ssh_list[networks["development"]["management"]]' => 'networks["management"]["networks["development"]["management"]"]["network"]/networks["management"]["networks["development"]["management"]"]["cidr"]',
+    })
+
+    end
 
   it 'installs the ufw package' do
     expect(chef_run).to remove_package('ufw')
@@ -19,7 +30,7 @@ describe 'spinen-iptables::default' do
       group:  'root',
       mode:   0644,
       backup: false,
-      #add variable support for testing here
+      variables: {:ssh_list=>{}, :icmp_list=>{}, :partial=>"no-partial"},
     )
   end
 
