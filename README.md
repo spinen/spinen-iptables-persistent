@@ -3,7 +3,6 @@ Spinen iptables Cookbook
 
 This cookbook installs iptables-persistent, and configures the server to open the specified ports via iptables.
 
-
 ## Setup
 ---
 
@@ -19,6 +18,12 @@ For the spinen-iptables cookbook to function correctly, you need to create a dat
 ### Change "development" to whatever vpc you plan on managing.
 
 `node.default['dns']['vpc'] = "development"`
+
+### Network Hashes:
+
+`node.default['iptables']['network1'] = "sample-network1"`
+
+`node.default['iptables']['network2'] = "sample-network2"`
 
 ## Usage
 ---
@@ -52,6 +57,4 @@ This cookbook runs on the following platforms:
 ## License and Authors
 ---
 
-Author: SPINEN (<keli.grubb@spinen.com>)
-
-Author: SPINEN (<luke.reimer@spinen.com>)
+Authors: SPINEN (<keli.grubb@spinen.com>, <luke.reimer@spinen.com>)
