@@ -7,13 +7,8 @@ describe 'spinen-iptables::default' do
     end.converge('spinen-iptables::default')
   end
 
- 
-
   before do
-      stub_data_bag_item('configs', 'networks').and_return({
-      'ssh_list[networks["development"]["management"]]' => 'networks["management"]["networks["development"]["management"]"]["network"]/networks["management"]["networks["development"]["management"]"]["cidr"]',
-    })
-
+      stub_data_bag_item('configs', 'networks') { JSON.parse(File.read('data_bags/configs/networks.json')) }
     end
 
   it 'installs the ufw package' do
@@ -30,7 +25,6 @@ describe 'spinen-iptables::default' do
       group:  'root',
       mode:   0644,
       backup: false,
-      variables: {:ssh_list=>{}, :icmp_list=>{}, :partial=>"no-partial"},
     )
   end
 
