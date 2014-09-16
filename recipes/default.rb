@@ -28,8 +28,8 @@ networks["#{node['dns']['vpc']}"]["management"].each do |net|
 end
 
 # create a hash of "network" => "network/cidr" for each allowed management network based on the vpc of the build
-networks['icmp'].each do |net|
-  icmp_list["#{net}"] = networks["icmp"]["#{net}"]["network"] + "/" + networks["icmp"]["#{net}"]["cidr"]
+networks['icmp'].each do |name, address|
+  icmp_list["#{name}"] = address
 end
 
 
