@@ -27,6 +27,11 @@ networks["#{node['dns']['vpc']}"]["management"].each do |net|
 	ssh_list["#{net}"] = networks["management"]["#{net}"]["network"] + "/" + networks["management"]["#{net}"]["cidr"]
 end
 
+# create a hash of "network" => "network/cidr" for each allowed management network based on the vpc of the build
+networks['icmp'].each do |net|
+  icmp_list["#{net}"] = networks["icmp"]["#{net}"]["network"] + "/" + networks["icmp"]["#{net}"]["cidr"]
+end
+
 
 #write a rules.v4 file into the iptables directory. the iptables-persistent package will read this file on boot and apply to iptables
 template "/etc/iptables/rules.v4" do
