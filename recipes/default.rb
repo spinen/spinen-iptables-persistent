@@ -33,9 +33,10 @@ networks['icmp'].each do |name, address|
 end
 
 
+
 #write a rules.v4 file into the iptables directory. the iptables-persistent package will read this file on boot and apply to iptables
 template "/etc/iptables/rules.v4" do
-  source "rules.v4.erb"
+  source node['iptables']['rules.v4']
   user   "root"
   group  "root"
   mode   0644
