@@ -19,7 +19,7 @@ package "iptables-persistent" do
   action :install
 end
 
-icmp_list = Hash.new
+icmp_list = networks['icmp']
 ssh_list = Hash.new
 
 # create a hash of "network" => "network/cidr" for each allowed management network based on the vpc of the build
@@ -27,14 +27,10 @@ networks["#{node['dns']['vpc']}"]["management"].each do |net|
 	ssh_list["#{net}"] = networks["management"]["#{net}"]["network"] + "/" + networks["management"]["#{net}"]["cidr"]
 end
 
-# create a hash of "network" => "network/cidr" for each allowed icmp network based on the vpc of the build
-icmp_list[node['iptables']['network1']] = networks["management"][node['iptables']['network1']]["network"] + "/" + networks["management"][node['iptables']['network1']]["cidr"]
-icmp_list[node['iptables']['network2']] = networks["management"][node['iptables']['network2']]["network"] + "/" + networks["management"][node['iptables']['network2']]["cidr"]
-icmp_list[node['iptables']['network3']] = networks["management"][node['iptables']['network3']]["network"] + "/" + networks["management"][node['iptables']['network3']]["cidr"]
-icmp_list[node['iptables']['network4']] = networks["management"][node['iptables']['network4']]["network"] + "/" + networks["management"][node['iptables']['network4']]["cidr"]
-icmp_list[node['iptables']['network5']] = networks["management"][node['iptables']['network5']]["network"] + "/" + networks["management"][node['iptables']['network5']]["cidr"]
-icmp_list["anywhere"] = networks["management"]["anywhere"]["network"] + "/" + networks["management"]["anywhere"]["cidr"]
-
+# create a hash of "network" => "network/cidr" for each allowed management network based on the vpc of the build
+networks['icmp'].each do |name, address|
+  icmp_list["#{name}"] = address
+end
 
 
 
