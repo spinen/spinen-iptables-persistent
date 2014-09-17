@@ -7,8 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# If you want to add any partial templates, change "no-partial" to the partial(s) you plan to include.
-node.default['iptables']['partial'] = ['app_proc.erb', 'db_zone_a.erb']
+# If you want to add any partial templates, MAKE SURE TO REPLACE "no-partial" with the partial(s) you plan to include.
+node.default['iptables']['partial'] = ["no-partial"]
 
 node.default['iptables']['rules.v4'] = 'rules.v4.erb'
 
