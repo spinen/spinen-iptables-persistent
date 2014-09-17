@@ -7,10 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# If you want to add any partial templates, change "no-partial" to the partial you plan to include.
-node.default['iptables']['partial'] = "no-partial"
+# If you want to add any partial templates, change "no-partial" to the partial(s) you plan to include.
+node.default['iptables']['partial'] = ['app_proc.erb', 'db_zone_a.erb']
 
-ode.default['iptables']['rules.v4'] = 'rules.v4.erb'
+node.default['iptables']['rules.v4'] = 'rules.v4.erb'
 
 #Point the default vpc to development. Change "development" to whatever vpc you plan on managing.
 node.default['dns']['vpc'] = "development"
