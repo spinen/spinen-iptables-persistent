@@ -9,7 +9,7 @@
 <% end -%>
 --append INPUT -i lo -j ACCEPT -m comment --comment "allow traffic from itself"
 --append INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT -m comment --comment "allow input from established connections"
-<% if @partial != ["no-partial"] -%>
+<% if not @partial.eql?(["no-partial"]) -%>
 <% render @partial -%>
 <% end -%>
 <% @icmp_list.each do |key, value| -%>
