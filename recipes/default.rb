@@ -19,7 +19,7 @@ package "iptables-persistent" do
   action :install
 end
 
-icmp_list = Hash.new
+icmp_list = networks['icmp']
 ssh_list = Hash.new
 
 # create a hash of "network" => "network/cidr" for each allowed management network based on the vpc of the build
@@ -27,17 +27,16 @@ networks["#{node['dns']['vpc']}"]["management"].each do |net|
 	ssh_list["#{net}"] = networks["management"]["#{net}"]["network"] + "/" + networks["management"]["#{net}"]["cidr"]
 end
 
-# create a hash of "network" => "network/cidr" for each allowed icmp network based on the vpc of the build
-icmp_list["sample-network1"] = networks["management"]["sample-network1"]["network"] + "/" + networks["management"]["sample-network1"]["cidr"]
-icmp_list["sample-network2"] = networks["management"]["sample-network2"]["network"] + "/" + networks["management"]["sample-network2"]["cidr"]
-icmp_list["anywhere"] = networks["management"]["anywhere"]["network"] + "/" + networks["management"]["anywhere"]["cidr"]
-
+# create a hash of "network" => "network/cidr" for each allowed management network based on the vpc of the build
+networks['icmp'].each do |name, address|
+  icmp_list["#{name}"] = address
+end
 
 
 
 #write a rules.v4 file into the iptables directory. the iptables-persistent package will read this file on boot and apply to iptables
 template "/etc/iptables/rules.v4" do
-  source "rules.v4.erb"
+  source node['iptables']['rules.v4']
   user   "root"
   group  "root"
   mode   0644

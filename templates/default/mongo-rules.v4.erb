@@ -9,9 +9,9 @@
 <% end -%>
 --append INPUT -i lo -j ACCEPT -m comment --comment "allow traffic from itself"
 --append INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT -m comment --comment "allow input from established connections"
-<% if not @partial.eql?(["no-partial"]) -%>
-<% render @partial -%>
-<% end -%>
+
+--append INPUT -s 10.132.<%= node['environment']['processing_subnet'] %>.0/26 -p tcp --dport 27017 -j ACCEPT -m comment --comment "Allow access to database"
+
 <% @icmp_list.each do |key, value| -%>
 --append INPUT -p icmp --icmp-type 8 -s <%= value %> -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT -m comment --comment "Allow incoming ping from <%= key %>"
 --append OUTPUT -p icmp --icmp-type 0 -s <%= value %> -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT -m comment --comment "Allow reply ping from <%= key %>"

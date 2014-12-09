@@ -1,0 +1,1 @@
+--append INPUT -s 10.132.<%= node['environment']['processing_subnet'] %>.0/26 -p tcp --dport 27017 -j ACCEPT -m comment --comment "Allow access to database"
