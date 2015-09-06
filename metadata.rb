@@ -3,6 +3,5 @@ maintainer       'SPINEN'
 maintainer_email 'luke.reimer@spinen.com'
 license          'All rights reserved'
 description      'Installs/Configures spinen-iptables'
-long_description 'Installs/Configures spinen-iptables'
-version          '0.2.0'
-
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version IO.read(File.join(File.dirname(__FILE__), 'VERSION'))
